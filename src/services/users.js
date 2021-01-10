@@ -1,20 +1,19 @@
-import { http } from './config'
+import { http } from "./config";
 
-export default	{
-
-	salvar:(user)=>{
-		return http.post('users',user);
-  },
-    
-	atualizar:(user)=>{
-		return http.put('users',user);
+export default {
+  salvar: (user) => {
+    return http.post("users", user);
   },
 
-  	listar:()=>{
-		return http.get('users')
+  atualizar: (user) => {
+    return http.put("users", user);
   },
-    
-	apagar:(user)=>{
-		return http.delete('users', { data: user })
-	}
-}
+
+  listar: () => {
+    return http.get("users");
+  },
+
+  apagar: (user) => {
+    return http.delete(`users/${user}`);
+  },
+};
